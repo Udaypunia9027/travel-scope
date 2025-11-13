@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Images/flight.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>TravelScape</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.6;
+        min-height: 100vh;
+        background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+        background-repeat: no-repeat;
+
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 200px;
+        top: 10px;
+        position: absolute;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: xx-large;
+        color: white;
+        padding-left: 20px;
+    }
+
+    .logo img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .navlinks {
+        border: 2px solid rgba(67, 66, 66, 0.2);
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+    }
+
+    .navlinks ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 10px 0;
+
+    }
+
+    .navlinks a:hover {
+        background-color: #fc067d;
+        border-radius: 50px;
+        padding: 5px 25px;
+        transition: 0.5s;
+    }
+
+    .navlinks ul li a {
+        list-style-type: none;
+        text-decoration: none;
+        font-size: larger;
+        color: white;
+
+
+    }
+
+    .login {
+        padding-left: 100px;
+        justify-content: center;
+    }
+
+    .login button {
+        height: 50px;
+        width: 100px;
+        border-radius: 50px;
+        font-size: larger;
+        cursor: pointer;
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(1px);
+        border: 2px solid rgba(67, 66, 66, 0.2);
+        color: white;
+    }
+
+    .login button:hover {
+        background-color: #fc067d;
+        border-radius: 50px;
+        padding: 5px 25px;
+        transition: 0.1s;
+    }
+
+    .header {
+        background-image: url(./Images/beautiful-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand\ \(1\).jpg);
+        background-size: cover;
+        background-position: center;
+        height: 730px;
+        color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 2px 2px 50px rgba(0, 0, 0, 1);
+        font-size: x-large;
+        border-radius: 0px 0px 30px 30px;
+        border-bottom: 5px solid rgb(255, 255, 255);
+    }
+
+    .header p {
+        max-width: 900px;
+        text-align: center;
+        line-height: 1.6;
+        font-size: larger;
+        margin-top: 30px;
+    }
+
+    .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        padding: 15px 25px;
+        margin-top: 15px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: fit-content;
+
+    }
+
+    .search:hover {
+        background-color: #f6007b;
+        transition: 0.5s;
+    }
+
+    .search input[type="date"],
+    .search select {
+        padding: 10px 15px;
+        font-size: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        backdrop-filter: blur(6px);
+        transition: 0.3s ease;
+    }
+
+    .search button {
+        padding: 10px 15px;
+        font-size: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        background: #ffffff;
+        color: hsl(0, 0%, 0%);
+        backdrop-filter: blur(6px);
+        transition: 0.3s ease;
+        width: 150px;
+        cursor: pointer;
+    }
+
+    .search button:hover {
+        padding: 20px 25px;
+        color: white;
+        background-color: violet;
+    }
+
+    .search select option {
+        color: #000000;
+    }
+
+    .showcase {
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-around;
+
+    }
+
+    .item {
+        height: 200px;
+        width: 300px;
+        border: 2px solid rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.9;
+        background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+        color: blueviolet;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+    }
+
+    .item p {
+        color: black;
+    }
+
+    .content-header {
+        display: flex;
+        flex-flow: wrap column;
+        margin: 50px 90px;
+    }
+
+    .content-header h3 {
+        font-size: 50px;
+        color: grey;
+
+
+    }
+
+    .content-header h1 {
+        font-size: 100px;
+        font-style: italic;
+        text-shadow: 50px 20px 30px rgb(97, 92, 92);
+    }
+
+    .content-header p {
+        font-size: larger;
+    }
+
+    .image-layout {
+        display: flex;
+        flex-flow: wrap row;
+        margin: 0px 40px;
+        gap: 30px;
+        justify-content: center;
+
+    }
+
+    .item1 {
+        background-image: url("./Images/Москва\ ❤️.jpeg");
+        background-size: cover;
+        height: 300px;
+        width: 400px;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    }
+
+    .item2 {
+        background-image: url("./Images/Kazan.jpg");
+        background-size: cover;
+        height: 300px;
+        width: 600px;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .item3 {
+        background-image: url("./Images/Sochi_harbour.jpg");
+        background-size: cover;
+        height: 300px;
+        width: 400px;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        order: 1;
+    }
+
+    .item4 {
+        background-image: url("./Images/St.\ Petersburg.jpg");
+        background-size: cover;
+        height: 300px;
+        width: 600px;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .item1 {
+        font-size: larger;
+        padding: 220px 0px 0px 10px;
+        color: white;
+        text-decoration-line: underline;
+        text-decoration-color: rgb(251, 0, 0);
+    }
+
+    .item2 {
+        font-size: larger;
+        padding: 220px 0px 0px 480px;
+        color: white;
+        text-decoration-line: underline;
+        text-decoration-color: yellow;
+    }
+
+    .item3 {
+        font-size: larger;
+        padding: 220px 0px 0px 10px;
+        color: white;
+        text-decoration-line: underline;
+        text-decoration-color: rgb(221, 0, 0);
+    }
+
+    .item4 {
+        font-size: larger;
+        color: white;
+        padding-left: 20px;
+        text-decoration-line: underline;
+        text-decoration-color: yellow;
+    }
+
+    .travel-flow {
+        display: flex;
+        margin: 80px 50px;
+        gap: 20px;
+    }
+
+    .part1 {
+        background-image: url("./Images/Pin\ page.jpeg");
+        background-size: cover;
+        height: 800px;
+        width: 900px;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    }
+
+    .part1 p {
+        color: blueviolet;
+        margin: 50px;
+        font-size: large;
+
+    }
+
+    .part2 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+    }
+
+    .part2 h2 {
+        color: black;
+        padding: 10px 0px 0px 30px;
+        font-size: xx-large;
+    }
+
+    .part2 p {
+        color: gray;
+        padding-left: 80px;
+        font-size: 20px;
+        
+    }
+
+    .part2-sub1 {
+        height: 120px;
+
+
+    }
+
+    .part2-sub2 {
+        height: 150px;
+        border-radius: 20px;
+        background-color: #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        border: 0.5px solid grey;
+    }
+
+    .part2-sub3 {
+        height: 150px;
+
+    }
+
+    .part2-sub4 {
+        height: 150px;
+
+    }
+
+    .part2-sub5 {
+        height: 150px;
+    }
+    .part2-sub1 h1{
+        color: gray;
+        padding-left:30px;
+        font-size: 50px;
+    }
+</style>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="./Images/flight.png" alt=""> TravelScape
+        </div>
+        <div class="navlinks">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Tour</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+        <div class="login">
+            <button>Login</button>
+        </div>
+    </div>
+    <div class="header">
+        <h1><q>Travel far, explore more, and live beyond boundaries</q></h1>
+        <p>Discover breathtaking destinations and create memories that last a lifetime.
+            Let every journey with TravelScape be an adventure waiting to unfold. 🌴✈️</p>
+        <div class="search">
+            <input type="date" placeholder="Date." class=".custom-date">
+            <select name="Budget" id="">
+                <option disabled selected>💰 Budget</option>
+                <option value="">&gt;50K</option>
+                <option value="">&lt;50K</option>
+                <option value="">&gt;1lac</option>
+                <option value="">&lt;1Lac</option>
+                <option value="">2Lac</option>
+            </select>
+            <select name="Guest" id="">
+                <option disabled selected>👤 Guests</option>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+                <option value="">10&gt;</option>
+            </select>
+            <button>
+                🔍 Search
+            </button>
+
+        </div>
+    </div>
+    <div class="showcase">
+        <div class="item">
+            <h1>10K+👨🏻‍👩🏻‍👦🏻‍👦🏻</h1>
+            <p>Total Customers</p>
+        </div>
+        <div class="item">
+            <h1>05+💪</h1>
+            <p>Years of Expierence</p>
+        </div>
+        <div class="item">
+            <h1>12K🗻</h1>
+            <p>Total Destinations</p>
+        </div>
+        <div class="item">
+            <h1>4.9⭐</h1>
+            <p>Average Ratings</p>
+        </div>
+    </div>
+    <div class="content-header">
+        <h3>Best Location</h3>
+        <h1>Russian tourism</h1>
+        <p>“Discover Moscow, St. Petersburg, Lake Baikal, and Ural Mountains. Experience rich culture, stunning
+            architecture, and breathtaking landscapes.”</p>
+    </div>
+    <div class="image-layout">
+        <div class="item1">
+            <h1>Moscow</h1>
+        </div>
+        <div class="item2">
+            <h1>Kazan</h1>
+        </div>
+        <div class="item3">
+            <h1>Sochi</h1>
+        </div>
+        <div class="item4">
+            <h1>St. Petersburg</h1>
+        </div>
+    </div>
+    <div class="travel-flow">
+        <div class="part1">
+            <p>"Uncover your next great adventure. <br> Explore hidden wonders and stunning landscapes, <br> making
+                every moment a story you'll cherish forever."</p>
+        </div>
+        <div class="part2">
+            <div class="part2-sub1">
+                <h2>How it works</h2>
+                <h1>One click for you</h1>
+            </div>
+            <div class="part2-sub2">
+                <h2>🔍Find your destination</h2>
+                <p>Embark on a journey to discover your dream destination, where adventure and relaxation await.</p>
+            </div>
+            <div class="part2-sub3">
+                <h2>🎫Book a ticket</h2>
+                <p>Ensure a smooth travel experience by booking tickets to your preferred destination via our booking
+                    platform.</p>
+            </div>
+            <div class="part2-sub4">
+                <h2>💳Make payment</h2>
+                <p>We offer a variety of payment options to meet your preferences and ensure a hassle-free transaction
+                    process.</p>
+            </div>
+            <div class="part2-sub5">
+                <h2>🗺️Explore destination</h2>
+                <p>You'll be immersed in a captivating tapestry of sights, sounds and tastes, as you wind your way
+                    through the ancient streets</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
