@@ -348,7 +348,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        
+
     }
 
     .part2 h2 {
@@ -361,7 +361,7 @@
         color: gray;
         padding-left: 80px;
         font-size: 20px;
-        
+
     }
 
     .part2-sub1 {
@@ -391,60 +391,91 @@
     .part2-sub5 {
         height: 150px;
     }
-    .part2-sub1 h1{
+
+    .part2-sub1 h1 {
         color: gray;
-        padding-left:30px;
+        padding-left: 30px;
         font-size: 50px;
     }
-    .content-package{
+
+    .content-package {
         padding: 0px 50px;
     }
-    .content-package h1{
+
+    .content-package h1 {
         font-size: 80px;
-        text-decoration-line:underline;
-        text-decoration-color:blueviolet ;
+        text-decoration-line: underline;
+        text-decoration-color: blueviolet;
     }
-    .content-package h2, .content-package p{
+
+    .content-package h2,
+    .content-package p {
         color: gray;
         font-size: 40px;
         text-align: right;
     }
-    
-    .cards{
+
+    .cards {
         display: flex;
         gap: 20px;
         justify-content: center;
+        cursor: pointer;
 
     }
-    .sub-card1{
+
+    .sub-card1 {
         background-image: url("./Images/sub-card1.jpeg");
         background-size: cover;
         width: 400px;
         height: 500px;
         border-radius: 50px;
-         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-         margin: 10px 40px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        margin: 10px 40px;
     }
-        .sub-card2{
+
+    .sub-card2 {
         background-image: url("./Images/sub-card2.jpeg");
         background-size: cover;
         width: 400px;
         height: 500px;
         border-radius: 50px;
-         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-         margin: 10px 40px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        margin: 10px 40px;
     }
-        .sub-card3{
+
+    .sub-card3 {
         background-image: url("./Images/sub-card3.jpeg");
         background-size: cover;
         width: 400px;
         height: 500px;
         border-radius: 50px;
-         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-         margin: 10px 40px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        margin: 10px 40px;
     }
-    
 
+    .card-content {
+        color: white;
+        background: rgba(72, 25, 25, 0.585);
+        backdrop-filter: blur(1px);
+        border: 2px solid grey;
+        align-items: end;
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin-top: 430px;
+    }
+
+    .viewmore {
+        height: 50px;
+        width: 250px;
+        border-radius: 50px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: medium;
+        color: white;
+        background-color: black;
+        margin: 50px auto 0;
+        text-align: center;
+        display: block;
+    }
 </style>
 
 <body>
@@ -577,15 +608,25 @@
         </div>
         <div class="cards">
             <div class="sub-card1">
-
+                <div class="card-content">
+                    <p>08 OCTOBER TO 18 OCTOBER</p>
+                    <h2>Paragliding Package $540</h2>
+                </div>
             </div>
             <div class="sub-card2">
-
+                <div class="card-content">
+                    <p>18 OCTOBER TO 22 OCTOBER</p>
+                    <h2>Rafting Package $440</h2>
+                </div>
             </div>
             <div class="sub-card3">
-
+                <div class="card-content">
+                    <p>08 OCTOBER TO 18 OCTOBER</p>
+                    <h2>Treking Package $310</h2>
+                </div>
             </div>
         </div>
+        <button class="viewmore">View more</button>
     </div>
 </body>
 
