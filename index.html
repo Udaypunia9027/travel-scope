@@ -477,6 +477,148 @@
         display: block;
         cursor: pointer;
     }
+
+    .recomendation {
+        display: flex;
+        height: 300px;
+        margin: 100px 50px;
+        gap: 20px;
+    }
+
+    .recomendation-image {
+        background-image: url("./Images/CEO.jpeg");
+        background-size: cover;
+        width: 600px;
+        height: 300px;
+        border-radius: 50%;
+        border: 2px solid rgb(16, 207, 201);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        text-align: center;
+        padding-top: 300px;
+        color: rgb(0, 0, 0);
+        font-size: larger;
+    }
+
+    .recomendation-content {
+        color: rgb(136, 92, 216);
+        font-size: large;
+        padding-top: 100px;
+        border-radius: 50px;
+    }
+
+    .ourblog-header {
+        text-align: center;
+        margin-top: 100px;
+        font-size: x-large;
+    }
+
+    .ourblog {
+        display: flex;
+        gap: 20px;
+        margin: 10px 50px;
+    }
+
+    .ourblog1 {
+        height: 500px;
+        width: 50%;
+        background-color: white;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .ourblog-1-image {
+        background-image: url("./Images/blog1.jpeg");
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .ourblog-1-content {
+        text-align: center;
+        margin-top: 70px;
+    }
+
+    .ourblog-1-content p {
+        color: grey;
+    }
+
+    .ourblog2 {
+        height: 500px;
+        width: 50%;
+        background-color: white;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    .ourblog-2-image {
+        background-image: url("./Images/blog2.jpeg");
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+
+
+    .footer-list {
+        display: flex;
+        gap: 200px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+        background-color: rgb(32, 28, 28);
+        color:white;
+    }
+    .footer-list{
+        margin-top:50px;
+        margin-left: 80px;
+        line-height: 2;
+    }
+    .footer-list1 ul,
+    .footer-list2 ul,
+    .footer-list3 ul{
+        list-style-type: none;
+        color: grey;
+
+    }
+    .footer-search{
+          margin-top:50px;
+          text-align: left;
+          padding-left:100px;
+                 line-height: 2;
+    }
+    footer{
+        background-color: black;
+        color: white;
+        outline: 8px solid black;
+        
+    }
+    .footer-email input{
+        border-radius: 50px;
+        height: 50px;
+        width: 300px;
+        text-align: center;
+        font-weight: bold;
+        border: 3px solid grey;
+    }
+    .footer-email button{
+        height: 50px;
+        width: 100px;
+        border-radius: 50px;
+        background-color: black;
+        color: wheat;
+        border: 2px solid white;
+    }
+    footer p{
+        margin-top: 10px;
+        text-align: center;
+    }
 </style>
 
 <body>
@@ -629,6 +771,92 @@
         </div>
         <button class="viewmore">View more</button>
     </div>
+    <div class="recomendation">
+        <div class="recomendation-image">
+            Donald Sullivan
+            Founder Fiko
+        </div>
+        <div class="recomendation-content">
+            <p>"This travel website is very informative and easy to use. I like how they present various destination
+                options and travel packages with clear details. Offering pictures and destination descriptions helps me
+                decide where I want to visit. Additionally, the ability to compare prices and reviews from other users
+                is very helpful in decision making "</p>
+        </div>
+    </div>
+    <div class="ourblog-header">
+        <p>Our Blog</p>
+        <h1>Our travel memories</h1>
+    </div>
+    <div class="ourblog">
+        <div class="ourblog1">
+            <div class="ourblog-1-image"></div>
+            <div class="ourblog-1-content">
+                <h2>Nov 14,2025</h2>
+                <h1>2025 Travel Trends - what you need to know</h1>
+                <p>2025 Taught us valuable life lessons. Plans don't always work out, flexiblity in life..</p>
+            </div>
+        </div>
+        <div class="ourblog2">
+            <div class="ourblog-2-image"></div>
+            <div class="ourblog-1-content">
+                <h2>Nov 08,2025</h2>
+                <h1>2025 Travel Trends - what you need to know</h1>
+                <p>2025 Taught us valuable life lessons. Plans don't always work out, flexiblity in life..</p>
+            </div>
+        </div>
+    </div>
+    <button class="viewmore">View more</button>
+    <div class="footer-content">
+        <div class="footer-list">
+            <div class="footer-list1">
+                About
+                <ul>
+                    <li>About Us</li>
+                    <li>Blog</li>
+                    <li>Careers</li>
+                    <li>Jobs</li>
+                    <li>In Press</li>
+                    <li>Gallery</li>
+                </ul>
+            </div>
+            <div class="footer-list2">
+                Support
+                <ul>
+                    <li>Contact Us</li>
+                    <li>Online Chat</li>
+                    <li>Whatsapp</li>
+                    <li>Telegram</li>
+                    <li>Ticketing</li>
+                    <li>Call Center</li>
+                </ul>
+            </div>
+            <div class="footer-list3">
+                FAQ
+                <ul>
+                    <li>Account</li>
+                    <li>Booking</li>
+                    <li>Payments</li>
+                    <li>Returns</li>
+                    <li>Private Policy</li>
+                    <li>Terms & Condition</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-search">
+            <h2>Newsletter</h2>
+            <p>“Don’t miss out on the exciting world of travel – subscribe now and embark on a journey of discovery
+                with
+                us.”</p>
+            <div class="footer-email">
+                <input type="text" placeholder="Enter Email">
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p> © 2025 TravelScape. All Rights Reserved.</p>
+    </footer>
+
 </body>
 
 </html>
